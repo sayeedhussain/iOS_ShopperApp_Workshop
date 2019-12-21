@@ -9,12 +9,19 @@ protocol ProductListViewModel {
 class ProductListViewModelImpl: ProductListViewModel {
     
     private let respository: ProductRepository
+    private let wishlistRepository: WishListRepository
     private var products: [Product] = []
     
-    init(repository: ProductRepository = ProductRepositoryImpl()) {
+    init(repository: ProductRepository = ProductRepositoryImpl(),
+         wishlistRepository: WishListRepository = WishListRepositoryImpl()) {
         self.respository = repository
+        self.wishlistRepository = wishlistRepository
     }
     
+    var productsCount: Int {
+        return products.count
+    }
+
     func getProducts(completion: @escaping () -> Void) {
         products = []
         respository.getProducts(completion: { [weak self] products in
@@ -26,11 +33,18 @@ class ProductListViewModelImpl: ProductListViewModel {
         })
     }
     
-    var productsCount: Int {
-        return products.count
-    }
-    
     func cellViewModel(at index: Int) -> ProductListCellViewModel {
-        return ProductListCellViewModelImpl(product: products[index])
+        let product = products[index]
+        let quantity = wishlistRepository.quantity(for: product)
+        return ProductListCellViewModelImpl(product: products[index],
+                                            quantity: quantity,
+                                            delegate: self)
+    }
+}
+
+extension ProductListViewModelImpl: ProductListCellViewModelDelegate {
+    func updateProduct(at index: Int, qty: Int) {
+        let product = products[index]
+        wishlistRepository.updateWishList(product: product, quantity: qty)
     }
 }

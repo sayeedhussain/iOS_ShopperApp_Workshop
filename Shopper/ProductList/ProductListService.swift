@@ -6,10 +6,13 @@ protocol ProductListService {
 
 class ProductListServiceImpl: ProductListService {
     
-    let networkClient: NetworkClient
+    private let networkClient: NetworkClient
+    private let decoder: JSONDecoder
     
-    init(networkClient: NetworkClient = NetworkClientImpl()) {
+    init(networkClient: NetworkClient = NetworkClientImpl(),
+         decoder: JSONDecoder = JSONDecoder()) {
         self.networkClient = networkClient
+        self.decoder = decoder
     }
     
     func getProducts(completion: @escaping ([Product]) -> Void, error: @escaping (Error) -> ()) {
@@ -35,7 +38,7 @@ class ProductListServiceImpl: ProductListService {
     
     private func parseProductsResponse(data: Data) -> [Product]? {
         do {
-            return try JSONDecoder().decode([Product].self, from: data)
+            return try decoder.decode([Product].self, from: data)
         } catch {
             print(error)
             return nil

@@ -5,7 +5,7 @@ protocol ProductRepository {
 
 class ProductRepositoryImpl: ProductRepository {
 
-    let productListService: ProductListService
+    private let productListService: ProductListService
     
     init(productListService: ProductListService = ProductListServiceImpl()) {
         self.productListService = productListService

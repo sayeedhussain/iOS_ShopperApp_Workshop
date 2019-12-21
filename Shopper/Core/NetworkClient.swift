@@ -6,8 +6,8 @@ protocol NetworkClient {
 
 class NetworkClientImpl: NetworkClient {    
     
-    let urlSession: URLSession
-    let httpRequestMapper: HttpRequestMapper
+    private let urlSession: URLSession
+    private let httpRequestMapper: HttpRequestMapper
     
     init(urlSession: URLSession = URLSession.shared,
          httpRequestMapper: HttpRequestMapper = HttpRequestMapperImpl()) {

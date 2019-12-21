@@ -5,19 +5,31 @@ protocol ProductListCellViewModel {
     var name: String {get}
     var price: NSAttributedString {get}
     var imageURL: String {get}
+    var qty: String {get}
+    func updateProduct(at index: Int, qty: Int)
+}
+
+protocol ProductListCellViewModelDelegate: class {
+    func updateProduct(at index: Int, qty: Int)
 }
 
 class ProductListCellViewModelImpl {
     
-    let product: Product
-    
-    init(product: Product) {
+    private let product: Product
+    private let quantity: Int
+    private weak var delegate: ProductListCellViewModelDelegate?
+
+    init(product: Product,
+         quantity: Int,
+         delegate: ProductListCellViewModelDelegate) {
         self.product = product
+        self.quantity = quantity
+        self.delegate = delegate
     }
 }
 
 extension ProductListCellViewModelImpl: ProductListCellViewModel {
-   
+    
     var name: String {
         return product.name
     }
@@ -34,4 +46,11 @@ extension ProductListCellViewModelImpl: ProductListCellViewModel {
         return product.image
     }
     
+    var qty: String {
+        return String(quantity)
+    }
+    
+    func updateProduct(at index: Int, qty: Int) {
+        delegate?.updateProduct(at: index, qty: qty)
+    }
 }
