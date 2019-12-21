@@ -32,7 +32,7 @@ class NetworkClientImpl: NetworkClient {
     private func handleResponse(data: Data?,
                                 response: URLResponse?,
                                 error: Error?) -> HttpResult {
-        guard let dataResponse = data, error != nil else {
+        guard let dataResponse = data, error == nil else {
             return HttpResult.failure(NSError(error: "Response Error"))
         }
         return HttpResult.success(dataResponse)

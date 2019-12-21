@@ -1,5 +1,9 @@
+import Foundation
+
 protocol ProductListViewModel {
-    func getProducts(completion: () -> Void)
+    var productsCount: Int {get}
+    func cellViewModel(at index: Int) -> ProductListCellViewModel
+    func getProducts(completion: @escaping () -> Void)
 }
 
 class ProductListViewModelImpl: ProductListViewModel {
@@ -11,13 +15,22 @@ class ProductListViewModelImpl: ProductListViewModel {
         self.respository = repository
     }
     
-    func getProducts(completion: () -> Void) {
+    func getProducts(completion: @escaping () -> Void) {
         products = []
         respository.getProducts(completion: { [weak self] products in
             self?.products = products
             completion()
         }, error: { error in
             print(error);
+            completion()
         })
+    }
+    
+    var productsCount: Int {
+        return products.count
+    }
+    
+    func cellViewModel(at index: Int) -> ProductListCellViewModel {
+        return ProductListCellViewModelImpl(product: products[index])
     }
 }

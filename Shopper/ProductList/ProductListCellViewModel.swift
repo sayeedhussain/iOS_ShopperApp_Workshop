@@ -1,7 +1,9 @@
+import Foundation
+import UIKit
+
 protocol ProductListCellViewModel {
     var name: String {get}
-    var price: String {get}
-    var offerPrice: String {get}
+    var price: NSAttributedString {get}
     var imageURL: String {get}
 }
 
@@ -20,16 +22,16 @@ extension ProductListCellViewModelImpl: ProductListCellViewModel {
         return product.name
     }
     
-    var price: String {
-        return product.price
-    }
-    
-    var offerPrice: String {
-        return product.offerPrice
+    var price: NSAttributedString {
+        guard let offerPrice = product.offerPrice else {
+            return NSAttributedString(string: product.price)
+        }
+        return NSAttributedString(string:offerPrice, attributes:
+            [NSAttributedString.Key.foregroundColor: UIColor.orange])
     }
     
     var imageURL: String {
-        return product.imageURL
+        return product.image
     }
     
 }

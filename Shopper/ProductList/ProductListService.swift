@@ -34,10 +34,11 @@ class ProductListServiceImpl: ProductListService {
     }
     
     private func parseProductsResponse(data: Data) -> [Product]? {
-        let decoder = JSONDecoder()
-        guard let products = try? decoder.decode([Product].self, from: data) else {
+        do {
+            return try JSONDecoder().decode([Product].self, from: data)
+        } catch {
+            print(error)
             return nil
-        }
-        return products
+        }        
     }
 }
