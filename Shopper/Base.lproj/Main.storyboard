@@ -71,34 +71,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="106.5" y="426.5" width="201.5" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXa-cu-BwC">
+                                <rect key="frame" x="54" y="121" width="50" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="99.5" y="477.5" width="215" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScR-b0-Gbt">
+                                <rect key="frame" x="345" y="121" width="15" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Savings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07W-G2-8yQ">
+                                <rect key="frame" x="54" y="161.5" width="120.5" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$20.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spg-Bx-EWL">
+                                <rect key="frame" x="280" y="161.5" width="80" height="29"/>
+                                <color key="backgroundColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWE-Le-JTg">
+                                <rect key="frame" x="54" y="247" width="43.5" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$50.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYP-Oq-8aY">
+                                <rect key="frame" x="277" y="247" width="90" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="ScR-b0-Gbt" secondAttribute="trailing" constant="54" id="9dR-I5-OO5"/>
+                            <constraint firstItem="ScR-b0-Gbt" firstAttribute="top" secondItem="NXa-cu-BwC" secondAttribute="top" id="AbO-SC-dgQ"/>
+                            <constraint firstItem="NXa-cu-BwC" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="77" id="CRF-y2-8My"/>
+                            <constraint firstItem="NXa-cu-BwC" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="54" id="Eme-BN-Xwg"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="Spg-Bx-EWL" secondAttribute="trailing" constant="54" id="HVJ-q8-yUq"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="KYP-Oq-8aY" secondAttribute="trailing" constant="47" id="N0X-4M-lYX"/>
+                            <constraint firstItem="07W-G2-8yQ" firstAttribute="top" secondItem="NXa-cu-BwC" secondAttribute="bottom" constant="15" id="VZH-7s-4P8"/>
+                            <constraint firstItem="KYP-Oq-8aY" firstAttribute="top" secondItem="UWE-Le-JTg" secondAttribute="top" id="YVV-LU-GWz"/>
+                            <constraint firstItem="07W-G2-8yQ" firstAttribute="leading" secondItem="NXa-cu-BwC" secondAttribute="leading" id="qvH-Ms-2y9"/>
+                            <constraint firstItem="Spg-Bx-EWL" firstAttribute="top" secondItem="07W-G2-8yQ" secondAttribute="top" id="uzT-Mj-d31"/>
+                            <constraint firstItem="UWE-Le-JTg" firstAttribute="top" secondItem="07W-G2-8yQ" secondAttribute="bottom" constant="60" id="wMI-p2-d7Z"/>
+                            <constraint firstItem="UWE-Le-JTg" firstAttribute="leading" secondItem="07W-G2-8yQ" secondAttribute="leading" id="xmd-fg-ges"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="items" destination="ScR-b0-Gbt" id="gZO-jf-Npr"/>
+                        <outlet property="totalCost" destination="KYP-Oq-8aY" id="Z1J-d9-s3j"/>
+                        <outlet property="totalSavings" destination="Spg-Bx-EWL" id="iRw-gx-STE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

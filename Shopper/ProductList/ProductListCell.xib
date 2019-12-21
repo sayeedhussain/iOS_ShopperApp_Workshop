@@ -79,6 +79,7 @@
                 <outlet property="name" destination="v6D-j0-oiP" id="p6P-T0-qLw"/>
                 <outlet property="price" destination="Y3b-73-hhi" id="jbu-AK-OIm"/>
                 <outlet property="qty" destination="Zd5-M2-B8V" id="PeJ-iJ-R7S"/>
+                <outlet property="stepper" destination="cQr-c6-MvN" id="Kd2-D1-mA1"/>
             </connections>
             <point key="canvasLocation" x="-152.89855072463769" y="-303.01339285714283"/>
         </tableViewCell>

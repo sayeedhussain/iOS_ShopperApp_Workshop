@@ -5,7 +5,7 @@ protocol ProductListCellViewModel {
     var name: String {get}
     var price: NSAttributedString {get}
     var imageURL: String {get}
-    var qty: String {get}
+    var qty: Double {get}
     func updateProduct(at index: Int, qty: Int)
 }
 
@@ -46,8 +46,8 @@ extension ProductListCellViewModelImpl: ProductListCellViewModel {
         return product.image
     }
     
-    var qty: String {
-        return String(quantity)
+    var qty: Double {
+        return Double(quantity)
     }
     
     func updateProduct(at index: Int, qty: Int) {
