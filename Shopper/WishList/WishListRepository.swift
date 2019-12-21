@@ -11,6 +11,8 @@ protocol WishListRepository {
 
 class WishListRepositoryImpl: WishListRepository {
     
+    static let shared = WishListRepositoryImpl()
+    
     private let persister: WishListPersister
     private var wishList: WishList = WishList(items: [])
     
@@ -25,13 +27,7 @@ class WishListRepositoryImpl: WishListRepository {
     
     func updateWishList(product: Product, quantity: Int) {
         
-        var itemIndex = -1
-       
-        for (index, item) in wishList.items.enumerated() {
-            if item.product == product {
-                itemIndex = index
-            }
-        }
+        let itemIndex = wishList.items.firstIndex { $0.product == product } ?? -1
         
         if itemIndex == -1 {
             wishList.items.append(WishListItem(product: product, quantity: 1))
@@ -47,12 +43,10 @@ class WishListRepositoryImpl: WishListRepository {
     }
     
     func quantity(for product: Product) -> Int {
-        guard let wishListItem = wishList.items.first(where: { (item) -> Bool in
+        let wishListItem = wishList.items.first(where: { (item) -> Bool in
             item.product == product
-        }) else {
-            return 0
-        }
-        return wishListItem.quantity
+        })
+        return wishListItem?.quantity ?? 0
     }
     
     func itemsCount() -> Int {
@@ -69,12 +63,15 @@ class WishListRepositoryImpl: WishListRepository {
     
     func totalSavings() -> Double {
         return wishList.items.reduce(0.0, {(acc, item) -> Double in
-            let savingsForItem = priceAsDouble(item.product.price) - priceAsDouble(item.product.offerPrice ?? "0") * Double(item.quantity)
-            return acc + savingsForItem
+            let priceForItem = priceAsDouble(item.product.price)
+            let offerPriceForItem = priceAsDouble(item.product.offerPrice ?? "0")
+            let savingsForItem = offerPriceForItem == 0 ? 0 : priceForItem - offerPriceForItem
+            let savingsForItemWithQty = savingsForItem * Double(item.quantity)
+            return acc + savingsForItemWithQty
         })
     }
     
     private func priceAsDouble(_ price: String) -> Double {
-        return Double(price.replacingOccurrences(of: "$", with: "")) ?? 0
+        return Double(price.stringByRemovingAll(characters: ["$",","])) ?? 0
     }
 }

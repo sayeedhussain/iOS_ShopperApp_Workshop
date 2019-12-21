@@ -18,7 +18,7 @@ class ProductListServiceImpl: ProductListService {
     func getProducts(completion: @escaping ([Product]) -> Void, error: @escaping (Error) -> ()) {
         
         let httpRequest = HttpRequest(method: .GET,
-                                      url: "http://www.mocky.io/v2/5dfb59e72f00006200ff9e80",
+                                      url: "http://www.mocky.io/v2/5dfd9fdf310000ed1ac96dd7",
                                       body: nil,
                                       headers: nil)
         

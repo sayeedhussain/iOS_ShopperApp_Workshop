@@ -6,7 +6,7 @@ class WishListViewModelImpl: WishListViewModel {
     
     private let repository: WishListRepository
     
-    init(repository: WishListRepository = WishListRepositoryImpl()) {
+    init(repository: WishListRepository = WishListRepositoryImpl.shared) {
         self.repository = repository
     }
     

@@ -13,7 +13,7 @@ class ProductListViewModelImpl: ProductListViewModel {
     private var products: [Product] = []
     
     init(repository: ProductRepository = ProductRepositoryImpl(),
-         wishlistRepository: WishListRepository = WishListRepositoryImpl()) {
+         wishlistRepository: WishListRepository = WishListRepositoryImpl.shared) {
         self.respository = repository
         self.wishlistRepository = wishlistRepository
     }

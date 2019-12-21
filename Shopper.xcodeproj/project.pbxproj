@@ -35,6 +35,7 @@
 		D1F026B923AD7B33007C041F /* HttpRequestMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F026B823AD7B33007C041F /* HttpRequestMapper.swift */; };
 		D1F026BB23AD8659007C041F /* NSError+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F026BA23AD8659007C041F /* NSError+Utils.swift */; };
 		D1F026C123AD8A03007C041F /* ProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1F026C023AD8A03007C041F /* ProductListCell.xib */; };
+		D1F7A80623ADDD490070B00E /* String+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F7A80523ADDD490070B00E /* String+Formatting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		D1F026B823AD7B33007C041F /* HttpRequestMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestMapper.swift; sourceTree = "<group>"; };
 		D1F026BA23AD8659007C041F /* NSError+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+Utils.swift"; sourceTree = "<group>"; };
 		D1F026C023AD8A03007C041F /* ProductListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListCell.xib; sourceTree = "<group>"; };
+		D1F7A80523ADDD490070B00E /* String+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Formatting.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				D1F026BA23AD8659007C041F /* NSError+Utils.swift */,
 				D1D3788823AD9B3700206D06 /* AsyncImageView.swift */,
 				D1D3789023ADA92800206D06 /* KeyValueStore.swift */,
+				D1F7A80523ADDD490070B00E /* String+Formatting.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				D1D3789723ADC2F100206D06 /* WishListSummary.swift in Sources */,
 				D1D3788F23ADA71700206D06 /* WishListPersister.swift in Sources */,
 				D1F026AC23AD72D8007C041F /* ProductListCellViewModel.swift in Sources */,
+				D1F7A80623ADDD490070B00E /* String+Formatting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
